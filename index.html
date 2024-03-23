@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Springs</title>
+    <link href="uPlot.min.css" rel="stylesheet">
+    <style>
+        #plot{
+            pointer-events: none;
+        }
+        #options{
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="options">
+        <div>
+            Coefficients<br>
+    <input type="text" name="two" placeholder="Mass"><br>
+    <input type="text" name="one" placeholder="Damping Constant"><br>
+    <input type="text" name="zero" placeholder="Spring Constant">
+        </div>
+        <div>
+            Inital Values<br>
+    <input type="text" name="a" placeholder="y(0)"><br>
+    <input type="text" name="b" placeholder="y'(0)">
+        </div>
+        <div>
+            Forcing Function<br>
+            <input type="text" name="forcing" placeholder="i.e. 3*cos(2t)">
+        </div>
+        <div>
+            Bounds<br>
+            <input type="text" name="ytop" placeholder="Upper X Bound"><br>
+            <input type="text" name="higher" placeholder="Upper Y Bound"><br>
+            <input type="text" name="lower" placeholder="Lower Y Bound"><br>
+    <!-- <input type="text" name="ybot" placeholder="Lower X Bound"> -->
+        </div>
+    </div>
+    Errors:
+    <div id="error">
+    </div>
+    Equation:
+    <div><span id="two"></span><span id="one"></span><span id="zero"></span><span id="forcing"></span></div>
+    <div id="plot"></div>
+    <button onclick="defaults()">Beat Example</button>
+    <button onclick="resonance()">Resonance Example</button>
+    <h3>Visualization of Oscillation</h3> Enable a cool looking bug<input type="checkbox" name="coolBug">
+    <canvas id="vis">
+    </canvas>
+    <footer>
+        confluxes.net | ODE Solver code <s>stolen</s> borrowed from <a href="https://jurasic.dev/ode/oscillator">jurasic.dev</a>
+    </footer>
+</body>
+
+<script src="uPlot.iife.min.js"></script>
+<script src="math.js"></script>
+<script src="ode.js"></script>
+<script src="canvas.js"></script>
+<script src="main.js"></script>
+</html>
