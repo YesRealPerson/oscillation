@@ -18,7 +18,7 @@ const clear = () => {
 }
 let coolBug = "0";
 let Multiplier = Math.exp((Math.abs(3)-100)/20*-1);
-var gradient = ctx.createLinearGradient(0, 0, width/1.5, height);
+var gradient = ctx.createLinearGradient(0, 0, width*0.9, 0);
 gradient.addColorStop(0, 'red');
 gradient.addColorStop(1 / 6, 'orange');
 gradient.addColorStop(2 / 6, 'yellow');
