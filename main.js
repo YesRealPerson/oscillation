@@ -172,7 +172,7 @@ const updateFunc = (name, value, checked) => {
           break;
         case "coolBug":
           if (checked) {
-            coolBug = "0.25*j";
+            coolBug = "50*Math.sin(j/100)**2";
           } else {
             coolBug = "0";
           }
@@ -238,7 +238,7 @@ const defaults = () => {
 const resonance = () => {
   parser.evaluate("g(t)=0")
   showThing = false;
-  let temp = ["1", "0", "121", "0", "0", "3cos(11t)", "5", "8", "-8"];
+  let temp = ["1", "0", "121", "0", "0", "3cos(11t)", "3", "8", "-8"];
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].value = temp[i];
     updateFunc(inputs[i].name, inputs[i].value, inputs[i].checked);
